@@ -1,0 +1,51 @@
+[OPTIONS]
+Compatibility=1.1
+Full-text search=Yes
+Contents file=index.hhc
+Default Window=main
+Default topic=index.html
+Index file=index.hhk
+Language=0x409 English (United States)
+Title=DataLogger API
+
+[WINDOWS]
+main="DataLogger API","index.hhc","index.hhk","index.html","index.html",,,,,0x23520,,0x10387e,,,,,,,,0
+
+[FILES]
+_data_logger_s_d_8h_source.html
+_data_logger_s_d_config_8h_source.html
+_data_logger_s_d_8h.html
+_data_logger_s_d_config_8h.html
+deprecated.html
+class_data_logger_s_d.html
+class_data_logger_s_d-members.html
+class_data_logger_s_d_config.html
+class_data_logger_s_d_config-members.html
+struct_sensor_info.html
+struct_sensor_info-members.html
+dir_a991eec27578c865874ede3d8ec657c2.html
+dir_ca7731ac0da50d01fb2f1b835617910b.html
+dir_481cc946b8a81b8d9363a4aad6201160.html
+index.html
+pages.html
+annotated.html
+classes.html
+functions.html
+functions_func.html
+functions_vars.html
+files.html
+globals.html
+globals_defs.html
+tab_a.png
+tab_b.png
+tab_h.png
+tab_s.png
+nav_h.png
+nav_f.png
+bc_s.png
+doxygen.png
+closed.png
+open.png
+bdwn.png
+sync_on.png
+sync_off.png
