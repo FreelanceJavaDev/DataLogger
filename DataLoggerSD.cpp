@@ -1,9 +1,8 @@
-/**
+/*!
  * This is the main DataLogger file. 
  * This code utilizes Structs and Pointers to minimize memory usage. 
  * THIS IS NOT FOR BEGINNERS TO MODIFY!
  * @file DataLoggerSD.cpp
- * @class DataLoggerSD \headerfile
  * @author Brian Young
  * @version 0.9 (Beta)
  * @since Current: 7/10/16 \n
@@ -16,9 +15,9 @@
  * =====================CONSTRUCTORS===================
  */
 
-/**
- * The simple DataLogger Constructor.  
- * It takes sensor readings every 5 minutes.
+/*!
+ * @brief The simple DataLogger Constructor.  
+ * @details It takes sensor readings every 5 minutes.
  * Interrupt Pin is set to digital pin 2.
  * @param sdPin is the pin for the SD card defined on the shield.
  */
@@ -26,12 +25,12 @@ DataLoggerSD::DataLoggerSD(uint8_t sdPin)
 {
      _sdPin = sdPin;
      head = NULL;
-    interval_minutes = DEFUALT_INTERVAL;
+    intervalMinutes = DEFUALT_INTERVAL;
 //    _rtcInterruptPin = 2;
 }
 
-/**
- * The customized DataLogger Constructor.
+/*!
+ * @brief The customized DataLogger Constructor.
  * @param sdPin is the pin for the SD card defined on the shield.
  * @param minutes defines how many minutes between sensor readings.
  * @param interruptPin is the SQW/SQ pin connected to either digital pin 2 or 3.
@@ -41,8 +40,8 @@ DataLoggerSD::DataLoggerSD(uint8_t sdPin, unsigned int minutes, uint8_t interrup
 {
     _sdPin = sdPin;
     head = NULL;
-    interval_minutes = minutes;
-//    _rtcInterruptPin = interruptPin;
+    intervalMinutes = minutes;
+    _rtcInterruptPin = interruptPin;
 }
 
 /*
@@ -55,7 +54,7 @@ DataLoggerSD::DataLoggerSD(uint8_t sdPin, unsigned int minutes, uint8_t interrup
  * ===================PUBLIC FUNCTIONS=================
  */
 
-/**
+/*!
  * Checks to ensure critical parts are configured correctly.
  * Adds the Date and Time as the first sensor in the data log.
  */
@@ -119,42 +118,42 @@ void DataLoggerSD::logData(bool includeSeconds)
 
 /**
  * Reads date from RTC and converts the numbers to a character string.
- * @param date_str is the string to hold the date.
- * @return date_str.
+ * @param dateStr is the string to hold the date.
+ * @return dateStr.
  * Date format (all numbers): m/d/yyyy
  */
-char* DataLoggerSD::readDate(char* date_str) {
+char* DataLoggerSD::readDate(char* dateStr) {
     char* date_format = (char*)"/"; 
     char ascii_date[5];
-    strcpy(date_str, itoa(month(), ascii_date) ); 
-    strcat(date_str, date_format);
-    strcat(date_str, itoa(day(), ascii_date) );
-    strcat(date_str, date_format);
-    strcat(date_str, itoa(year(), ascii_date) );
-    return date_str;
+    strcpy(dateStr, itoa(month(), ascii_date) ); 
+    strcat(dateStr, date_format);
+    strcat(dateStr, itoa(day(), ascii_date) );
+    strcat(dateStr, date_format);
+    strcat(dateStr, itoa(year(), ascii_date) );
+    return dateStr;
 }
 
 /**
  * Reads time from RTC and converts numbers to char*.
  * Time format is in 24-hour format: h:mm:ss.
- * @param time_str is the string to hold the time.
+ * @param timeStr is the string to hold the time.
  * @param includeSec includes or skips the seconds if desired.
- * @return time_str
+ * @return timeStr
  */
-char* DataLoggerSD::readTime(char* time_str, bool include_seconds) {
+char* DataLoggerSD::readTime(char* timeStr, bool includeSec) {
     char* time_format = (char*)":";
     char ascii_hour[3];
     char ascii_min[3];
     char ascii_sec[3];
-    strcpy(time_str, itoa(hour(), ascii_hour) );
-    strcat(time_str, time_format);
-    strcat(time_str, timeDigitAdjust(minute(), ascii_min) );
-    if(include_seconds)
+    strcpy(timeStr, itoa(hour(), ascii_hour) );
+    strcat(timeStr, time_format);
+    strcat(timeStr, timeDigitAdjust(minute(), ascii_min) );
+    if(includeSec)
     {
-        strcat(time_str, time_format);
-        strcat(time_str, timeDigitAdjust(second(), ascii_sec) );
+        strcat(timeStr, time_format);
+        strcat(timeStr, timeDigitAdjust(second(), ascii_sec) );
     }
-    return time_str;
+    return timeStr;
 }
 
 /**
@@ -162,7 +161,7 @@ char* DataLoggerSD::readTime(char* time_str, bool include_seconds) {
  */
 void DataLoggerSD::collectionInterval()
 {
-    unsigned long interval = interval_minutes*MILLIS_PER_MIN;
+    unsigned long interval = intervalMinutes*MILLIS_PER_MIN;
     unsigned long waitCount = 0;
     while(waitCount < interval)
     {

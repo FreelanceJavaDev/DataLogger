@@ -5,11 +5,14 @@
  * Full utilization of this library is intended for intermediate users. 
  * This library hides a lot behind the scenes.
  * You must have a shield with an SD card and an RTC connected to your board in addtion to a DHT sensor.
- * The library will do the rest
+ * The library will do the rest.
  */
 /* Plese note that the code here assumes use of a DHT11. 
  * If you are using something different select the appropriate DHT type and comment out the others
- * 
+ * The DHT library used is was found through the Arduino IDE.  
+ * Go to Sketch->Include Library->Manage Libraries.
+ * Search "DHT" and an adafruit library titled "DHT sensor library" should pop up.  
+ * Install it.
  */
 
 /* CONSTANTS and GLOBAL VARIABLES*/

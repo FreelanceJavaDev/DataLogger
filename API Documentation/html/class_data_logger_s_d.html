@@ -52,9 +52,6 @@
 <div class="title">DataLoggerSD Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>This is the main DataLogger file.  
- <a href="class_data_logger_s_d.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -64,9 +61,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad1da5992ff262285e3b620a58906169c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_logger_s_d.html#ad1da5992ff262285e3b620a58906169c">DataLoggerSD</a> (uint8_t sdPin, unsigned int minutes, uint8_t interruptPin)</td></tr>
 <tr class="memdesc:ad1da5992ff262285e3b620a58906169c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The customized DataLogger Constructor.  <a href="#ad1da5992ff262285e3b620a58906169c">More...</a><br /></td></tr>
 <tr class="separator:ad1da5992ff262285e3b620a58906169c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c54bcfa370574163b39b7b2e9d1c7b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_logger_s_d.html#a7c54bcfa370574163b39b7b2e9d1c7b7">begin</a> ()</td></tr>
-<tr class="memdesc:a7c54bcfa370574163b39b7b2e9d1c7b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks to ensure critical parts are configured correctly.  <a href="#a7c54bcfa370574163b39b7b2e9d1c7b7">More...</a><br /></td></tr>
-<tr class="separator:a7c54bcfa370574163b39b7b2e9d1c7b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d9b1cc7479817062c3dbdd0ac9bc2ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_logger_s_d.html#a8d9b1cc7479817062c3dbdd0ac9bc2ea">begin</a> (void)</td></tr>
+<tr class="separator:a8d9b1cc7479817062c3dbdd0ac9bc2ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a507c818ec121401a5c7b9655f6c2a9e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_logger_s_d.html#a507c818ec121401a5c7b9655f6c2a9e6">getNewSensorReading</a> (const char *sensorName, float sensorReading)</td></tr>
 <tr class="memdesc:a507c818ec121401a5c7b9655f6c2a9e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the reading from a sensor that returns a float and sets it to the given node's readings.  <a href="#a507c818ec121401a5c7b9655f6c2a9e6">More...</a><br /></td></tr>
 <tr class="separator:a507c818ec121401a5c7b9655f6c2a9e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -82,27 +78,21 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a94acbd23eb7200f35305b857c02330af"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_logger_s_d.html#a94acbd23eb7200f35305b857c02330af">addNodeToList</a> (<a class="el" href="struct_sensor_info.html">SensorInfo</a> *node)</td></tr>
 <tr class="memdesc:a94acbd23eb7200f35305b857c02330af"><td class="mdescLeft">&#160;</td><td class="mdescRight">An alternate method to add a sensor to the list.  <a href="#a94acbd23eb7200f35305b857c02330af">More...</a><br /></td></tr>
 <tr class="separator:a94acbd23eb7200f35305b857c02330af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff6b4f05e8168c8fbb43d83a453f66da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_logger_s_d.html#aff6b4f05e8168c8fbb43d83a453f66da">logData</a> (bool includeSec)</td></tr>
-<tr class="memdesc:aff6b4f05e8168c8fbb43d83a453f66da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs data in a file, the files are designed to be viewed on a system chronologically.  <a href="#aff6b4f05e8168c8fbb43d83a453f66da">More...</a><br /></td></tr>
-<tr class="separator:aff6b4f05e8168c8fbb43d83a453f66da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af469de2f5f729d7293bf6def84316cd7"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_logger_s_d.html#af469de2f5f729d7293bf6def84316cd7">readDate</a> (char *date_str)</td></tr>
-<tr class="memdesc:af469de2f5f729d7293bf6def84316cd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads date from RTC and converts the numbers to a character string.  <a href="#af469de2f5f729d7293bf6def84316cd7">More...</a><br /></td></tr>
-<tr class="separator:af469de2f5f729d7293bf6def84316cd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad79806f1fdbf3650f43599675e066e7f"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_logger_s_d.html#ad79806f1fdbf3650f43599675e066e7f">readTime</a> (char *time_str, bool includeSec)</td></tr>
-<tr class="memdesc:ad79806f1fdbf3650f43599675e066e7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads time from RTC and converts numbers to char*.  <a href="#ad79806f1fdbf3650f43599675e066e7f">More...</a><br /></td></tr>
-<tr class="separator:ad79806f1fdbf3650f43599675e066e7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a256aa50d4ecea635279e3262f1eb3b35"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_logger_s_d.html#a256aa50d4ecea635279e3262f1eb3b35">logData</a> (bool includeSeconds)</td></tr>
+<tr class="memdesc:a256aa50d4ecea635279e3262f1eb3b35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs data in a file, the files are designed to be viewed on a system chronologically.  <a href="#a256aa50d4ecea635279e3262f1eb3b35">More...</a><br /></td></tr>
+<tr class="separator:a256aa50d4ecea635279e3262f1eb3b35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb915e0b3d9c56cc26d54e040daaefaf"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_logger_s_d.html#abb915e0b3d9c56cc26d54e040daaefaf">readDate</a> (char *dateStr)</td></tr>
+<tr class="memdesc:abb915e0b3d9c56cc26d54e040daaefaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads date from RTC and converts the numbers to a character string.  <a href="#abb915e0b3d9c56cc26d54e040daaefaf">More...</a><br /></td></tr>
+<tr class="separator:abb915e0b3d9c56cc26d54e040daaefaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42151cad6e9fa324e7430043eedd80d6"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_logger_s_d.html#a42151cad6e9fa324e7430043eedd80d6">readTime</a> (char *timeStr, bool includeSec)</td></tr>
+<tr class="memdesc:a42151cad6e9fa324e7430043eedd80d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads time from RTC and converts numbers to char*.  <a href="#a42151cad6e9fa324e7430043eedd80d6">More...</a><br /></td></tr>
+<tr class="separator:a42151cad6e9fa324e7430043eedd80d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a1d70e42c23e0714b50cf9e1c8d5615"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4a1d70e42c23e0714b50cf9e1c8d5615"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_logger_s_d.html#a4a1d70e42c23e0714b50cf9e1c8d5615">collectionInterval</a> ()</td></tr>
 <tr class="memdesc:a4a1d70e42c23e0714b50cf9e1c8d5615"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a placeholder function that will be replaced with a sleep library. <br /></td></tr>
 <tr class="separator:a4a1d70e42c23e0714b50cf9e1c8d5615"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This is the main DataLogger file. </p>
-<p>This code utilizes Structs and Pointers to minimize memory usage. THIS IS NOT FOR BEGINNERS TO MODIFY! </p><dl class="section author"><dt>Author</dt><dd>Brian Young </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>0.9 (Beta) </dd></dl>
-<dl class="section since"><dt>Since</dt><dd>Current: 7/10/16 <br />
-Created: 6/29/16 </dd></dl>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a66f2d9fbdb20177d99a7ddeaa3ca8b4c"></a>
 <div class="memitem">
 <div class="memproto">
@@ -265,21 +255,20 @@ Created: 6/29/16 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a7c54bcfa370574163b39b7b2e9d1c7b7"></a>
+<a class="anchor" id="a8d9b1cc7479817062c3dbdd0ac9bc2ea"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void DataLoggerSD::begin </td>
           <td>(</td>
+          <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Checks to ensure critical parts are configured correctly. </p>
-<p>Adds the Date and Time as the first sensor in the data log. </p>
+<p>Checks to ensure critical parts are configured correctly. Adds the Date and Time as the first sensor in the data log. </p>
 
 </div>
 </div>
@@ -361,7 +350,7 @@ Created: 6/29/16 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="aff6b4f05e8168c8fbb43d83a453f66da"></a>
+<a class="anchor" id="a256aa50d4ecea635279e3262f1eb3b35"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -385,7 +374,7 @@ Created: 6/29/16 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="af469de2f5f729d7293bf6def84316cd7"></a>
+<a class="anchor" id="abb915e0b3d9c56cc26d54e040daaefaf"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -393,7 +382,7 @@ Created: 6/29/16 </dd></dl>
           <td class="memname">char * DataLoggerSD::readDate </td>
           <td>(</td>
           <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>date_str</em></td><td>)</td>
+          <td class="paramname"><em>dateStr</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -402,15 +391,15 @@ Created: 6/29/16 </dd></dl>
 <p>Reads date from RTC and converts the numbers to a character string. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">date_str</td><td>is the string to hold the date. </td></tr>
+    <tr><td class="paramname">dateStr</td><td>is the string to hold the date. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>date_str. Date format (all numbers): m/d/yyyy </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>dateStr. Date format (all numbers): m/d/yyyy </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ad79806f1fdbf3650f43599675e066e7f"></a>
+<a class="anchor" id="a42151cad6e9fa324e7430043eedd80d6"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -418,7 +407,7 @@ Created: 6/29/16 </dd></dl>
           <td class="memname">char * DataLoggerSD::readTime </td>
           <td>(</td>
           <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>time_str</em>, </td>
+          <td class="paramname"><em>timeStr</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -437,23 +426,23 @@ Created: 6/29/16 </dd></dl>
 <p>Reads time from RTC and converts numbers to char*. </p>
 <p>Time format is in 24-hour format: h:mm:ss. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">time_str</td><td>is the string to hold the time. </td></tr>
+    <tr><td class="paramname">timeStr</td><td>is the string to hold the time. </td></tr>
     <tr><td class="paramname">includeSec</td><td>includes or skips the seconds if desired. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>time_str </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>timeStr </dd></dl>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_data_logger_s_d_8h_source.html">DataLoggerSD.h</a></li>
-<li>DataLoggerSD.cpp</li>
+<li><a class="el" href="_data_logger_s_d_8cpp.html">DataLoggerSD.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jul 10 2016 21:33:53 for DataLogger API by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jul 20 2016 13:51:52 for DataLogger API by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>

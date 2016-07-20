@@ -1,11 +1,11 @@
 /**
- * Helper library that checks the SD card and RTC are configured correctly.
- * DO NOT EDIT UNDER ANY CIRCUMSTANCE!
- * @class DataLoggerSDConfig \headerfile
- * @author Brian Young
- * @version 0.9 (Beta)
- * @since Current: 7/2/16 \n
- * Created: 6/21/16
+ * @file 		DataLoggerSDConfig.cpp
+ * @brief 		Implementation of the Data Logger.
+ * @details 	Checks if the SD card has been configured and configures the RTC if needed.\n DO NOT EDIT UNDER ANY CIRCUMSTANCE!
+ * @author 		Brian Young
+ * @version 	0.9 (Beta)
+ * @since 		Current: 7/2/16 \n
+ * 				Created: 6/21/16
  */
 
 #include "DataLoggerSDConfig.h"
@@ -13,8 +13,9 @@
 //********* PUBLIC FUNCTIONS START *************
 
 /**
- * Constructor for checking the configuration of the SD Shield and RTC.
- * @param sdPin is the pin used to access the SD card inserted into the shield.
+ * @brief 		Constructs an object for checking the configuration of the SD Shield and RTC.
+ * @details		Use of an object is required to use functions within the arduino.
+ * @param 		sdPin is the pin used to access the SD card inserted into the shield.
  */
 DataLoggerSDConfig::DataLoggerSDConfig(uint8_t sdPin)
 {
@@ -22,15 +23,15 @@ DataLoggerSDConfig::DataLoggerSDConfig(uint8_t sdPin)
 }
 
 /**
- * The destructor for the DataLoggerSDConfig. 
- * This frees memory allocated.
+ * @brief 		Destructor for the DataLoggerSDConfig. 
+ * @details 	This frees memory allocated.
  */
 DataLoggerSDConfig::~DataLoggerSDConfig() {} 
 
 
 /**
- * Checks the setup to ensure the SD card and RTC are corretly configured.
- * If the SD card isn't properly configured there will be an error.
+ * @brief 		Checks to ensure the SD card and RTC are corretly configured.
+ * @details		If the SD card isn't properly configured there will be an error.
  */
 void DataLoggerSDConfig::configLogger()
 {
@@ -40,7 +41,6 @@ void DataLoggerSDConfig::configLogger()
 			 #error Initialization failed!
 	#endif
 	/* SD Card Check END */
-	//formatSD();
 	/* RTC Check START */
 	setSyncProvider(RTC.get);   // the function to get the time from the RTC
 	//setSyncInterval(10);
@@ -58,21 +58,16 @@ void DataLoggerSDConfig::configLogger()
 	/* RTC Check END */
 
 }
-	//****** PRIVATE FUNCTIONS START *******
-	
-	/**
-	 * Formats SD card to follow a format.
-	 * Adds a Log Folder if the directory doesn't exit.
-	 * @deprecated
-	 */
-	void DataLoggerSDConfig::formatSD()
-	{
-		if(!SD.exists(LOG_DIR))
-			SD.mkdir(LOG_DIR);
-	}
- 
+/*
+ * * * * * * * * * * * * * * * * * * *
+ * --------------START-------------- *
+ * ========PRIVATE FUNCTIONS======== *
+ * * * * * * * * * * * * * * * * * * *
+ */
+
 /**
- * Retrieves the system time and date from the connected computer.
+ * @brief Configures RTC to the system time and date from the connected computer.
+ * @details Serial must be available.
  */
  unsigned long DataLoggerSDConfig::processSyncMessage() {
 	const unsigned long DEFAULT_TIME = 1357041600; // Jan 1 2013 
@@ -83,3 +78,16 @@ void DataLoggerSDConfig::configLogger()
 	}
 	return pc_time;
 }
+
+/*
+ * * * * * * * * * * * * * * * * * * *
+ * ---------------END--------------- *
+ * ========PRIVATE FUNCTIONS======== *
+ * * * * * * * * * * * * * * * * * * *
+ */
+
+/*
+ * * * * * * * * * * * * * * * * * * * 
+ *            END OF FILE            *
+ * * * * * * * * * * * * * * * * * * *
+ */
