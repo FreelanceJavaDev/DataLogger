@@ -3,8 +3,8 @@
  * @brief 		Implementation of the Data Logger.
  * @details 	Checks if the SD card has been configured and configures the RTC if needed.\n DO NOT EDIT UNDER ANY CIRCUMSTANCE!
  * @author 		Brian Young
- * @version 	0.9 (Beta)
- * @since 		Current: 7/2/16 \n
+ * @version 	0.9.5 (Beta)
+ * @since 		Current: 8/4/16 \n
  * 				Created: 6/21/16
  */
 
@@ -12,7 +12,7 @@
 
 //********* PUBLIC FUNCTIONS START *************
 
-/**
+/*!
  * @brief 		Constructs an object for checking the configuration of the SD Shield and RTC.
  * @details		Use of an object is required to use functions within the arduino.
  * @param 		sdPin is the pin used to access the SD card inserted into the shield.
@@ -22,7 +22,7 @@ DataLoggerSDConfig::DataLoggerSDConfig(uint8_t sdPin)
 	_sdPinCheck = sdPin;
 }
 
-/**
+/*!
  * @brief 		Destructor for the DataLoggerSDConfig. 
  * @details 	This frees memory allocated.
  */

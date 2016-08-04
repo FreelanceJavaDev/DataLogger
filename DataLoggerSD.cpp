@@ -4,8 +4,8 @@
  * THIS IS NOT FOR BEGINNERS TO MODIFY!
  * @file DataLoggerSD.cpp
  * @author Brian Young
- * @version 0.9 (Beta)
- * @since Current: 7/10/16 \n
+ * @version 0.9.5 (Beta)
+ * @since Current: 8/4/16 \n
  * Created: 6/29/16
  */
 
@@ -16,24 +16,24 @@
  */
 
 /*!
- * @brief The simple DataLogger Constructor.  
- * @details It takes sensor readings every 5 minutes.
- * Interrupt Pin is set to digital pin 2.
- * @param sdPin is the pin for the SD card defined on the shield.
+ * @brief       The simple version of the DataLogger constructor.  
+ * @details     Takes sensor readings every 5 minutes. Interrupt Pin is set to digital pin 2.
+ * @param       sdPin is the pin for the SD card defined on the shield.
  */
 DataLoggerSD::DataLoggerSD(uint8_t sdPin)
 {
-     _sdPin = sdPin;
-     head = NULL;
+    _sdPin = sdPin;
+    head = NULL;
     intervalMinutes = DEFUALT_INTERVAL;
-//    _rtcInterruptPin = 2;
+    _rtcInterruptPin = 2;
 }
 
 /*!
- * @brief The customized DataLogger Constructor.
- * @param sdPin is the pin for the SD card defined on the shield.
- * @param minutes defines how many minutes between sensor readings.
- * @param interruptPin is the SQW/SQ pin connected to either digital pin 2 or 3.
+ * @brief      The custom DataLogger constructor.
+ * @details    For maximum compatiability select either digital pin 2 or 3 for the interrupt pin.
+ * @param      sdPin is the pin for the SD card defined on the shield.
+ * @param      minutes defines how many minutes between sensor readings, minimum is one minute.
+ * @param      interruptPin is the SQW/SQ pin connected to either digital pin 2 or 3.
  */
 
 DataLoggerSD::DataLoggerSD(uint8_t sdPin, unsigned int minutes, uint8_t interruptPin)
@@ -41,8 +41,18 @@ DataLoggerSD::DataLoggerSD(uint8_t sdPin, unsigned int minutes, uint8_t interrup
     _sdPin = sdPin;
     head = NULL;
     intervalMinutes = minutes;
+    
+    if(minutes < 1)
+        intervalMinutes = 1;
+        
     _rtcInterruptPin = interruptPin;
 }
+
+/*!
+ * @brief 		Destructor for the DataLoggerSD. 
+ * @details 	This frees memory allocated.
+ */
+DataLoggerSD::~DataLoggerSD() {}
 
 /*
  * -------------------------END------------------------
@@ -54,9 +64,9 @@ DataLoggerSD::DataLoggerSD(uint8_t sdPin, unsigned int minutes, uint8_t interrup
  * ===================PUBLIC FUNCTIONS=================
  */
 
-/*!
- * Checks to ensure critical parts are configured correctly.
- * Adds the Date and Time as the first sensor in the data log.
+/**
+ * @brief       Checks to ensure critical parts are configured correctly.
+ * @details     Adds the Date and Time as the first sensor in the data log.
  */
 void DataLoggerSD::begin()
 {
@@ -64,14 +74,12 @@ void DataLoggerSD::begin()
     configCheck.configLogger();    
     configCheck.~DataLoggerSDConfig();
     addSensorToList("Date Time", "m/d/yyyy h:mm:ss"); //provides Compatible date and time for spreadsheets
-
 }
 
 /**
- * Logs data in a file, the files are designed to be viewed on a system chronologically.
- * The file name is the current year + the abbreviated month over which the data was collected.
- * This logs all the data.
- * @param includeSeconds is if the log is to include seconds.
+ * @brief       Logs data in a file, the files are designed to be viewed on a system chronologically.
+ * @details     The file name is the current year + the abbreviated month over which the data was collected.
+ * @param       includeSeconds is if the log is to include seconds.
  */
 void DataLoggerSD::logData(bool includeSeconds)
 {
@@ -86,15 +94,17 @@ void DataLoggerSD::logData(bool includeSeconds)
         monthLog = SD.open(logFile, FILE_WRITE);
             for (SensorInfo* n = head; n; n = n->next) //funky thing is pointers when null they evaluate to false
             {
-                    monthLog.print(n-> _sensorName);
-                    monthLog.print('(');
-                    monthLog.print(n -> _units);
-                    monthLog.print(')');
-                    if (n->next) {monthLog.print(DATA_SEPERATOR);} //remove trailing comma
+                monthLog.print(n-> _sensorName);
+                monthLog.print('(');
+                monthLog.print(n -> _units);
+                monthLog.print(')');
+                if (n->next) {monthLog.print(DATA_SEPERATOR);} //remove trailing comma
             }
+
         monthLog.print('\n');
         monthLog.close();
         }
+        
         monthLog = SD.open(logFile, FILE_WRITE);
         monthLog.seek(monthLog.size()); //finds the end of the file and goes there to make the log entry
         char* stamp = (char *)malloc(sizeof(char));
@@ -106,21 +116,23 @@ void DataLoggerSD::logData(bool includeSeconds)
         free(stamp);
         stamp = NULL;
         monthLog.print(DATA_SEPERATOR);
+        
         for ( SensorInfo *n = (head -> next); n; n = n-> next)
         {
-                monthLog.print(n->_sensorReading);
-                if ((n->next)) //remove trailing comma
-                { monthLog.print(DATA_SEPERATOR); } 
+            monthLog.print(n->_sensorReading);
+            if ((n->next)) //remove trailing comma
+            { monthLog.print(DATA_SEPERATOR); } 
         }
+        
         monthLog.print('\n');
         monthLog.close();
 }
 
 /**
- * Reads date from RTC and converts the numbers to a character string.
- * @param dateStr is the string to hold the date.
- * @return dateStr.
- * Date format (all numbers): m/d/yyyy
+ * @brief     Reads date from RTC and converts the numbers to a character string.
+ * @details   Date format (all numbers): m/d/yyyy
+ * @param     dateStr is the string to hold the date.
+ * @return    Date as a string.
  */
 char* DataLoggerSD::readDate(char* dateStr) {
     char* date_format = (char*)"/"; 
@@ -134,11 +146,11 @@ char* DataLoggerSD::readDate(char* dateStr) {
 }
 
 /**
- * Reads time from RTC and converts numbers to char*.
- * Time format is in 24-hour format: h:mm:ss.
- * @param timeStr is the string to hold the time.
- * @param includeSec includes or skips the seconds if desired.
- * @return timeStr
+ * @brief       Reads time from RTC and converts numbers to char*.
+ * @details     Time format is in 24-hour format: h:mm:ss.
+ * @param       timeStr is the string to hold the time.
+ * @param       includeSec includes or skips the seconds if desired.
+ * @return      Time as a string.
  */
 char* DataLoggerSD::readTime(char* timeStr, bool includeSec) {
     char* time_format = (char*)":";
@@ -148,6 +160,7 @@ char* DataLoggerSD::readTime(char* timeStr, bool includeSec) {
     strcpy(timeStr, itoa(hour(), ascii_hour) );
     strcat(timeStr, time_format);
     strcat(timeStr, timeDigitAdjust(minute(), ascii_min) );
+    
     if(includeSec)
     {
         strcat(timeStr, time_format);
@@ -157,7 +170,8 @@ char* DataLoggerSD::readTime(char* timeStr, bool includeSec) {
 }
 
 /**
- * This is a placeholder function that will be replaced with a sleep library.
+ * @brief       This is a placeholder function that will be replaced with a sleep library.
+ * @details     Temporary function will be depreciated at a later date.
  */
 void DataLoggerSD::collectionInterval()
 {
@@ -172,10 +186,11 @@ void DataLoggerSD::collectionInterval()
 }
 
 /**
- * Gets the reading from a sensor that returns a float and sets it to the given node's readings.
- * If using a pin for raw data use getRawPinReading() instead.
- * @param sensorName is the name of the sensor that gathered the data.
- * @param sensorReading is the reading taken by the sensor.
+ * @brief       Gets the reading from a sensor that returns a float and sets it to the given node's readings.
+ * @details     If using a pin for raw data use getNewRawPinReading() instead.
+ * @param       sensorName is the name of the sensor that gathered the data.
+ * @param       sensorReading is the reading taken by the sensor.
+ * @see         getNewRawPinReading()
  */
 void DataLoggerSD::getNewSensorReading(const char* sensorName, float sensorReading)
 {
@@ -185,10 +200,25 @@ void DataLoggerSD::getNewSensorReading(const char* sensorName, float sensorReadi
 }
 
 /**
- * Creates a new sensor for the Sensor List.
- * @param sensorName is the name of he sensor.
- * @param units are units to be used with the sensor.
- * @return a pointer of a struct of sensor data.
+ * @brief       Gets the raw pin reading and converts it to a sensor reading.
+ * @details     analog will return a voltage, digital returns 1 or 0.
+ * @param       pinVal is a value taken from digitalRead() or analogRead()
+ * @param       vRef is the voltage refrence, usually either 3.3 or 5.0
+ * @param       analog determines the correct value to return.
+ * @return      Pin reading, if analog it returns a voltage.
+ */
+float DataLoggerSD::getNewRawPinReading(int pinVal, float vRef, bool analog)
+{
+    return analog ? ((pinVal * vRef) / 1023) : (pinVal); //Ternary boolean operation (The C/C++ equivlent of a one line if-else)
+}
+
+/**
+ * @brief       Creates a new sensor for the Sensor List.
+ * @details     Use addSensorToList() instead.
+ * @param       sensorName is the name of he sensor.
+ * @param       units are units to be used with the sensor.
+ * @return      A pointer of a struct of sensor data.
+ * @see         addSensorToList()
  */
 DataLoggerSD::SensorInfo* DataLoggerSD::addSensor(char* sensorName, char *units)
 {
@@ -201,9 +231,10 @@ DataLoggerSD::SensorInfo* DataLoggerSD::addSensor(char* sensorName, char *units)
 }
 
 /**
- * Creates a new sensor for the Sensor List and adds it to the end of the list.
- * @param sensorName is the name of he sensor.
- * @param units are the desired units to be used with the sensor.
+ * @brief       Creates a new sensor for the Sensor List and adds it to the end of the list.
+ * @details     Order of sensors in list determines order of data in the log file.
+ * @param       sensorName is the name of he sensor.
+ * @param       units are the desired units to be used with the sensor.
  */
 void DataLoggerSD::addSensorToList(const char* sensorName, const char* units)
 {
@@ -220,36 +251,24 @@ void DataLoggerSD::addSensorToList(const char* sensorName, const char* units)
     n -> next = node;
     }
 }
+
 /**
- * An alternate method to add a sensor to the list.
- * @param node is the sensor to be added.
+ * @brief       An alternate method to add a sensor to the list.
+ * @details     Advanced user version of addSensorToList(), requires use of addSensor().
+ * @param       node is the sensor to be added.
+ * @see         addSensor()
  */
 void DataLoggerSD::addNodeToList(SensorInfo* node)
 {
     if(head == NULL)
+    { head = node; }
+    
+    else 
     {
-        head = node;
+        SensorInfo *n = head;
+        while (n->next) { n = n->next;}
+        n -> next = node;
     }
-    else {
-    SensorInfo *n = head;
-    while (n->next) {
-        n = n->next;
-    }
-    n -> next = node;
-    }
-}
-
-
-/**
- * Gets the raw pin reading and converts it to a voltage reading.
- * @param pinVal is a value taken from digitalRead() or analogRead()
- * @param vRef is the voltage refrence, usually either 3.3 or 5.0
- * @param analog determines the correct value to return
- * @return pin reading. If analog it will return a voltage.
- */
-float DataLoggerSD::getNewRawPinReading(int pinVal, float vRef, bool analog)
-{
-    return analog ? ((pinVal * vRef) / 1023) : (pinVal); //Ternary boolean operation (The C/C++ equivlent of a one line if-else)
 }
 
 /*
@@ -263,11 +282,11 @@ float DataLoggerSD::getNewRawPinReading(int pinVal, float vRef, bool analog)
  */
 
 /**
- * A search utility function to find a sensor in a list.
- * @param senseName is the name of the sensor to be searched.
- * @return the sensor node that matches the parameter if found, NULL otherwise.
+ * @brief       A search utility function to find a sensor in a list.
+ * @details     Used inside of other functions in this class.
+ * @param       senseName is the name of the sensor to be searched.
+ * @return      The sensor node that matches the parameter if found, NULL otherwise.
  */
-
 DataLoggerSD::SensorInfo* DataLoggerSD::search(const char* senseName)
 {
     SensorInfo *n = head;
@@ -284,10 +303,11 @@ DataLoggerSD::SensorInfo* DataLoggerSD::search(const char* senseName)
 }
 
 /**
- * A utility that converts base 10 int to ascii
- * @param val is int to be turned into string.
- * @param buff is a buffer to hold the converted int.
- * @return string representation of int value
+ * @brief       A utility that converts base 10 int to ascii.
+ * @details     Used with converting time and date.
+ * @param       val is int to be turned into string.
+ * @param       buff is a buffer to hold the converted int.
+ * @return      A string representation of provided int value.
  */
 char* DataLoggerSD::itoa(int val, char* buff)
 {
@@ -298,6 +318,7 @@ char* DataLoggerSD::itoa(int val, char* buff)
         temp /= 10;
         ++placeCount;
     }
+    
     uint8_t lastIndex = placeCount - 1;
     placeCount = 0;
     while (val > 0)
@@ -305,18 +326,19 @@ char* DataLoggerSD::itoa(int val, char* buff)
         buff[lastIndex - placeCount] = ((val % 10) + '0');
         val /= 10;
         ++placeCount;
-    } 
+    }
+     
     buff[lastIndex+1] ='\0'; 
     return buff;
 }
 
 /**
-  * Utility function for readTime.  Is an int to prevent warning when doing an explicit cast.
-  * There was no difference in memory usage.
-  * @param digits is the number to be converted.
-  * @param buff is the character buffer to put the digits into.
-  * @return char pointer to resulting number
-  */
+ * @brief       Utility function for readTime.  Is an int to prevent warning when doing an explicit cast.
+ * @details     There was no difference in memory usage.
+ * @param       digits is the number to be converted.
+ * @param       buff is the character buffer to put the digits into.
+ * @return      Char pointer to resulting number.
+ */
 char* DataLoggerSD::timeDigitAdjust(int digits, char* buff) {
     if (digits < 10)
     {
@@ -324,13 +346,9 @@ char* DataLoggerSD::timeDigitAdjust(int digits, char* buff) {
         buff[1] = (digits+'0');
         buff[2] = '\0';
         return buff;
+    }
         
-    }
-    else {
-        return itoa(digits, buff);
-      
-    }
-    
+    else { return itoa(digits, buff); }    
 }
 
 /*

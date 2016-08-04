@@ -3,8 +3,8 @@
  * @brief 		Used to Configure the Data Logger.
  * @details 	Checks if the SD card has been configured and configures the RTC if needed.
  * @author 		Brian Young
- * @version 	0.9 (Beta)
- * @since 		Current: 7/2/16 \n
+ * @version 	0.9.5 (Beta)
+ * @since 		Current: 8/4/16 \n
  * 				Created: 6/21/16
  */
 
@@ -14,6 +14,7 @@
 #include <SD.h>
 #include <Time.h>
 #include <DS1307RTC.h>
+
 #if defined(ARDUINO) && ARDUINO >= 100
 #include "Arduino.h"
 #else
@@ -22,20 +23,18 @@
 
 class DataLoggerSDConfig {
 	public:
-		//functions
+		
+		//constructors
 		DataLoggerSDConfig(uint8_t sdPin);
 		~DataLoggerSDConfig(); //destructor, frees memory allocated.
+		
+		//functions
 		void configLogger();
 
 	private:
-	//funtions
+	//functions
 		unsigned long processSyncMessage();
 	//data
-		/**
-		* @var _sdPinCheck 
-		* @brief
-		* @details  The pin used to access the SD card by the shield.
-		*/
-		uint8_t _sdPinCheck;
+		uint8_t _sdPinCheck; /*!< The pin used to access the SD card by the shield. */
 };
 #endif
