@@ -11,7 +11,7 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_data_logger_s_d.html#a55034fc6fef73e5980b1f2a0b3c48d93"><param name="Name" value="addSensor"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_data_logger_s_d.html#a359002002d33a0cb633d15c7ac59c21a"><param name="Name" value="addSensorToList"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_data_logger_s_d.html#a8d9b1cc7479817062c3dbdd0ac9bc2ea"><param name="Name" value="begin"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_data_logger_s_d.html#a4a1d70e42c23e0714b50cf9e1c8d5615"><param name="Name" value="collectionInterval"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_data_logger_s_d.html#adf8b2bc50273e7cf789edb73facbdfda"><param name="Name" value="collectionInterval"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_data_logger_s_d_config.html#a64d796d1335541dcafd71e128291f82d"><param name="Name" value="configLogger"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_data_logger_s_d.html"><param name="Name" value="DataLoggerSD"></OBJECT>
   <UL>
@@ -19,13 +19,14 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_data_logger_s_d.html#a55034fc6fef73e5980b1f2a0b3c48d93"><param name="Name" value="addSensor"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_data_logger_s_d.html#a359002002d33a0cb633d15c7ac59c21a"><param name="Name" value="addSensorToList"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_data_logger_s_d.html#a8d9b1cc7479817062c3dbdd0ac9bc2ea"><param name="Name" value="begin"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_data_logger_s_d.html#a4a1d70e42c23e0714b50cf9e1c8d5615"><param name="Name" value="collectionInterval"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_data_logger_s_d.html#adf8b2bc50273e7cf789edb73facbdfda"><param name="Name" value="collectionInterval"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_data_logger_s_d.html#a66f2d9fbdb20177d99a7ddeaa3ca8b4c"><param name="Name" value="DataLoggerSD"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_data_logger_s_d.html#a361857e17707f5b742cfc823bccd0de9"><param name="Name" value="getNewRawPinReading"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_data_logger_s_d.html#a507c818ec121401a5c7b9655f6c2a9e6"><param name="Name" value="getNewSensorReading"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_data_logger_s_d.html#a256aa50d4ecea635279e3262f1eb3b35"><param name="Name" value="logData"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_data_logger_s_d.html#abb915e0b3d9c56cc26d54e040daaefaf"><param name="Name" value="readDate"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_data_logger_s_d.html#a42151cad6e9fa324e7430043eedd80d6"><param name="Name" value="readTime"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_data_logger_s_d.html#ad056133f8c0faf980ccd7e6bb43e2d93"><param name="Name" value="~DataLoggerSD"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_data_logger_s_d_config.html"><param name="Name" value="DataLoggerSDConfig"></OBJECT>
   <UL>
@@ -39,6 +40,7 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_data_logger_s_d.html#a256aa50d4ecea635279e3262f1eb3b35"><param name="Name" value="logData"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_sensor_info.html#a002196ab86e86dd633f60d76780905c8"><param name="Name" value="next"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_data_logger_s_d.html#abb915e0b3d9c56cc26d54e040daaefaf"><param name="Name" value="readDate"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="md__Users_brianyoung_1_Documents_Arduino_libraries_DataLogger_README.html"><param name="Name" value="README"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_data_logger_s_d.html#a42151cad6e9fa324e7430043eedd80d6"><param name="Name" value="readTime"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_sensor_info.html"><param name="Name" value="SensorInfo"></OBJECT>
   <UL>
@@ -47,6 +49,7 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_sensor_info.html#aca613a300d9cc92d893ddc0c4cd698e0"><param name="Name" value="_units"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_sensor_info.html#a002196ab86e86dd633f60d76780905c8"><param name="Name" value="next"></OBJECT>
   </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_data_logger_s_d.html#ad056133f8c0faf980ccd7e6bb43e2d93"><param name="Name" value="~DataLoggerSD"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_data_logger_s_d_config.html#a911abfa369d976ae8cfab96603680090"><param name="Name" value="~DataLoggerSDConfig"></OBJECT>
 </UL>
 </BODY>

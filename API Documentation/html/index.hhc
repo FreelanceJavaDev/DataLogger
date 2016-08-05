@@ -5,6 +5,7 @@
 </OBJECT>
 <UL>
 <LI><OBJECT type="text/sitemap"><param name="Name" value="LICENSE"><param name="Local" value="md__Users_brianyoung_1_Documents_Arduino_libraries_DataLogger_LICENSE.html"><param name="ImageNumber" value="11"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="README"><param name="Local" value="md__Users_brianyoung_1_Documents_Arduino_libraries_DataLogger_README.html"><param name="ImageNumber" value="11"></OBJECT>
 <LI><OBJECT type="text/sitemap"><param name="Name" value="Classes"><param name="Local" value="annotated.html"><param name="ImageNumber" value="1"></OBJECT>
   <UL>
   <LI><OBJECT type="text/sitemap"><param name="Name" value="Class List"><param name="Local" value="annotated.html"><param name="ImageNumber" value="1"></OBJECT>
@@ -13,11 +14,12 @@
       <UL>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="DataLoggerSD"><param name="Local" value="class_data_logger_s_d.html#a66f2d9fbdb20177d99a7ddeaa3ca8b4c"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="DataLoggerSD"><param name="Local" value="class_data_logger_s_d.html#ad1da5992ff262285e3b620a58906169c"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="~DataLoggerSD"><param name="Local" value="class_data_logger_s_d.html#ad056133f8c0faf980ccd7e6bb43e2d93"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="addNodeToList"><param name="Local" value="class_data_logger_s_d.html#a94acbd23eb7200f35305b857c02330af"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="addSensor"><param name="Local" value="class_data_logger_s_d.html#a55034fc6fef73e5980b1f2a0b3c48d93"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="addSensorToList"><param name="Local" value="class_data_logger_s_d.html#a359002002d33a0cb633d15c7ac59c21a"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="begin"><param name="Local" value="class_data_logger_s_d.html#a8d9b1cc7479817062c3dbdd0ac9bc2ea"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="collectionInterval"><param name="Local" value="class_data_logger_s_d.html#a4a1d70e42c23e0714b50cf9e1c8d5615"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="collectionInterval"><param name="Local" value="class_data_logger_s_d.html#adf8b2bc50273e7cf789edb73facbdfda"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="getNewRawPinReading"><param name="Local" value="class_data_logger_s_d.html#a361857e17707f5b742cfc823bccd0de9"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="getNewSensorReading"><param name="Local" value="class_data_logger_s_d.html#a507c818ec121401a5c7b9655f6c2a9e6"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="logData"><param name="Local" value="class_data_logger_s_d.html#a256aa50d4ecea635279e3262f1eb3b35"><param name="ImageNumber" value="11"></OBJECT>

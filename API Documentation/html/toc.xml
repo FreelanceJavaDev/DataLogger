@@ -1,15 +1,17 @@
 <toc label="DataLogger API" topic="index.html">
   <topic label="LICENSE" href="md__Users_brianyoung_1_Documents_Arduino_libraries_DataLogger_LICENSE.html"/>
+  <topic label="README" href="md__Users_brianyoung_1_Documents_Arduino_libraries_DataLogger_README.html"/>
   <topic label="Classes" href="annotated.html">
     <topic label="Class List" href="annotated.html">
       <topic label="DataLoggerSD" href="class_data_logger_s_d.html">
         <topic label="DataLoggerSD" href="class_data_logger_s_d.html#a66f2d9fbdb20177d99a7ddeaa3ca8b4c"/>
         <topic label="DataLoggerSD" href="class_data_logger_s_d.html#ad1da5992ff262285e3b620a58906169c"/>
+        <topic label="~DataLoggerSD" href="class_data_logger_s_d.html#ad056133f8c0faf980ccd7e6bb43e2d93"/>
         <topic label="addNodeToList" href="class_data_logger_s_d.html#a94acbd23eb7200f35305b857c02330af"/>
         <topic label="addSensor" href="class_data_logger_s_d.html#a55034fc6fef73e5980b1f2a0b3c48d93"/>
         <topic label="addSensorToList" href="class_data_logger_s_d.html#a359002002d33a0cb633d15c7ac59c21a"/>
         <topic label="begin" href="class_data_logger_s_d.html#a8d9b1cc7479817062c3dbdd0ac9bc2ea"/>
-        <topic label="collectionInterval" href="class_data_logger_s_d.html#a4a1d70e42c23e0714b50cf9e1c8d5615"/>
+        <topic label="collectionInterval" href="class_data_logger_s_d.html#adf8b2bc50273e7cf789edb73facbdfda"/>
         <topic label="getNewRawPinReading" href="class_data_logger_s_d.html#a361857e17707f5b742cfc823bccd0de9"/>
         <topic label="getNewSensorReading" href="class_data_logger_s_d.html#a507c818ec121401a5c7b9655f6c2a9e6"/>
         <topic label="logData" href="class_data_logger_s_d.html#a256aa50d4ecea635279e3262f1eb3b35"/>

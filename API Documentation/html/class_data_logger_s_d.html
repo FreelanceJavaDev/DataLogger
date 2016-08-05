@@ -18,7 +18,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">DataLogger API
-   &#160;<span id="projectnumber">0.9 Beta</span>
+   &#160;<span id="projectnumber">0.9.5 Beta</span>
    </div>
    <div id="projectbrief">Arduino SD data logger API</div>
   </td>
@@ -56,18 +56,22 @@
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a66f2d9fbdb20177d99a7ddeaa3ca8b4c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_logger_s_d.html#a66f2d9fbdb20177d99a7ddeaa3ca8b4c">DataLoggerSD</a> (uint8_t sdPin)</td></tr>
-<tr class="memdesc:a66f2d9fbdb20177d99a7ddeaa3ca8b4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The simple DataLogger Constructor.  <a href="#a66f2d9fbdb20177d99a7ddeaa3ca8b4c">More...</a><br /></td></tr>
+<tr class="memdesc:a66f2d9fbdb20177d99a7ddeaa3ca8b4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The simple version of the DataLogger constructor.  <a href="#a66f2d9fbdb20177d99a7ddeaa3ca8b4c">More...</a><br /></td></tr>
 <tr class="separator:a66f2d9fbdb20177d99a7ddeaa3ca8b4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1da5992ff262285e3b620a58906169c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_logger_s_d.html#ad1da5992ff262285e3b620a58906169c">DataLoggerSD</a> (uint8_t sdPin, unsigned int minutes, uint8_t interruptPin)</td></tr>
-<tr class="memdesc:ad1da5992ff262285e3b620a58906169c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The customized DataLogger Constructor.  <a href="#ad1da5992ff262285e3b620a58906169c">More...</a><br /></td></tr>
+<tr class="memdesc:ad1da5992ff262285e3b620a58906169c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The custom DataLogger constructor.  <a href="#ad1da5992ff262285e3b620a58906169c">More...</a><br /></td></tr>
 <tr class="separator:ad1da5992ff262285e3b620a58906169c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad056133f8c0faf980ccd7e6bb43e2d93"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_logger_s_d.html#ad056133f8c0faf980ccd7e6bb43e2d93">~DataLoggerSD</a> ()</td></tr>
+<tr class="memdesc:ad056133f8c0faf980ccd7e6bb43e2d93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor for the <a class="el" href="class_data_logger_s_d.html">DataLoggerSD</a>.  <a href="#ad056133f8c0faf980ccd7e6bb43e2d93">More...</a><br /></td></tr>
+<tr class="separator:ad056133f8c0faf980ccd7e6bb43e2d93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d9b1cc7479817062c3dbdd0ac9bc2ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_logger_s_d.html#a8d9b1cc7479817062c3dbdd0ac9bc2ea">begin</a> (void)</td></tr>
+<tr class="memdesc:a8d9b1cc7479817062c3dbdd0ac9bc2ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks to ensure critical parts are configured correctly.  <a href="#a8d9b1cc7479817062c3dbdd0ac9bc2ea">More...</a><br /></td></tr>
 <tr class="separator:a8d9b1cc7479817062c3dbdd0ac9bc2ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a507c818ec121401a5c7b9655f6c2a9e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_logger_s_d.html#a507c818ec121401a5c7b9655f6c2a9e6">getNewSensorReading</a> (const char *sensorName, float sensorReading)</td></tr>
 <tr class="memdesc:a507c818ec121401a5c7b9655f6c2a9e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the reading from a sensor that returns a float and sets it to the given node's readings.  <a href="#a507c818ec121401a5c7b9655f6c2a9e6">More...</a><br /></td></tr>
 <tr class="separator:a507c818ec121401a5c7b9655f6c2a9e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a361857e17707f5b742cfc823bccd0de9"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_logger_s_d.html#a361857e17707f5b742cfc823bccd0de9">getNewRawPinReading</a> (int pinVal, float vRef, bool analog)</td></tr>
-<tr class="memdesc:a361857e17707f5b742cfc823bccd0de9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the raw pin reading and converts it to a voltage reading.  <a href="#a361857e17707f5b742cfc823bccd0de9">More...</a><br /></td></tr>
+<tr class="memdesc:a361857e17707f5b742cfc823bccd0de9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the raw pin reading and converts it to a sensor reading.  <a href="#a361857e17707f5b742cfc823bccd0de9">More...</a><br /></td></tr>
 <tr class="separator:a361857e17707f5b742cfc823bccd0de9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55034fc6fef73e5980b1f2a0b3c48d93"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_sensor_info.html">SensorInfo</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_logger_s_d.html#a55034fc6fef73e5980b1f2a0b3c48d93">addSensor</a> (char *sensorName, char *units)</td></tr>
 <tr class="memdesc:a55034fc6fef73e5980b1f2a0b3c48d93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new sensor for the Sensor List.  <a href="#a55034fc6fef73e5980b1f2a0b3c48d93">More...</a><br /></td></tr>
@@ -87,10 +91,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a42151cad6e9fa324e7430043eedd80d6"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_logger_s_d.html#a42151cad6e9fa324e7430043eedd80d6">readTime</a> (char *timeStr, bool includeSec)</td></tr>
 <tr class="memdesc:a42151cad6e9fa324e7430043eedd80d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads time from RTC and converts numbers to char*.  <a href="#a42151cad6e9fa324e7430043eedd80d6">More...</a><br /></td></tr>
 <tr class="separator:a42151cad6e9fa324e7430043eedd80d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a1d70e42c23e0714b50cf9e1c8d5615"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4a1d70e42c23e0714b50cf9e1c8d5615"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_logger_s_d.html#a4a1d70e42c23e0714b50cf9e1c8d5615">collectionInterval</a> ()</td></tr>
-<tr class="memdesc:a4a1d70e42c23e0714b50cf9e1c8d5615"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a placeholder function that will be replaced with a sleep library. <br /></td></tr>
-<tr class="separator:a4a1d70e42c23e0714b50cf9e1c8d5615"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf8b2bc50273e7cf789edb73facbdfda"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_logger_s_d.html#adf8b2bc50273e7cf789edb73facbdfda">collectionInterval</a> (void)</td></tr>
+<tr class="memdesc:adf8b2bc50273e7cf789edb73facbdfda"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a placeholder function that will be replaced with a sleep library.  <a href="#adf8b2bc50273e7cf789edb73facbdfda">More...</a><br /></td></tr>
+<tr class="separator:adf8b2bc50273e7cf789edb73facbdfda"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a66f2d9fbdb20177d99a7ddeaa3ca8b4c"></a>
@@ -107,8 +110,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
       </table>
 </div><div class="memdoc">
 
-<p>The simple DataLogger Constructor. </p>
-<p>It takes sensor readings every 5 minutes. Interrupt Pin is set to digital pin 2. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>The simple version of the DataLogger constructor. </p>
+<p>Takes sensor readings every 5 minutes. Interrupt Pin is set to digital pin 2. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">sdPin</td><td>is the pin for the SD card defined on the shield. </td></tr>
   </table>
@@ -147,15 +150,33 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
       </table>
 </div><div class="memdoc">
 
-<p>The customized DataLogger Constructor. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>The custom DataLogger constructor. </p>
+<p>For maximum compatiability select either digital pin 2 or 3 for the interrupt pin. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">sdPin</td><td>is the pin for the SD card defined on the shield. </td></tr>
-    <tr><td class="paramname">minutes</td><td>defines how many minutes between sensor readings. </td></tr>
+    <tr><td class="paramname">minutes</td><td>defines how many minutes between sensor readings, minimum is one minute. </td></tr>
     <tr><td class="paramname">interruptPin</td><td>is the SQW/SQ pin connected to either digital pin 2 or 3. </td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a class="anchor" id="ad056133f8c0faf980ccd7e6bb43e2d93"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DataLoggerSD::~DataLoggerSD </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Destructor for the <a class="el" href="class_data_logger_s_d.html">DataLoggerSD</a>. </p>
+<p>This frees memory allocated. </p>
 
 </div>
 </div>
@@ -175,12 +196,13 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div><div class="memdoc">
 
 <p>An alternate method to add a sensor to the list. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Advanced user version of <a class="el" href="class_data_logger_s_d.html#a359002002d33a0cb633d15c7ac59c21a" title="Creates a new sensor for the Sensor List and adds it to the end of the list. ">addSensorToList()</a>, requires use of <a class="el" href="class_data_logger_s_d.html#a55034fc6fef73e5980b1f2a0b3c48d93" title="Creates a new sensor for the Sensor List. ">addSensor()</a>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">node</td><td>is the sensor to be added. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_data_logger_s_d.html#a55034fc6fef73e5980b1f2a0b3c48d93" title="Creates a new sensor for the Sensor List. ">addSensor()</a> </dd></dl>
 
 </div>
 </div>
@@ -209,14 +231,15 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div><div class="memdoc">
 
 <p>Creates a new sensor for the Sensor List. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Use <a class="el" href="class_data_logger_s_d.html#a359002002d33a0cb633d15c7ac59c21a" title="Creates a new sensor for the Sensor List and adds it to the end of the list. ">addSensorToList()</a> instead. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">sensorName</td><td>is the name of he sensor. </td></tr>
     <tr><td class="paramname">units</td><td>are units to be used with the sensor. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>a pointer of a struct of sensor data. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A pointer of a struct of sensor data. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_data_logger_s_d.html#a359002002d33a0cb633d15c7ac59c21a" title="Creates a new sensor for the Sensor List and adds it to the end of the list. ">addSensorToList()</a> </dd></dl>
 
 </div>
 </div>
@@ -245,7 +268,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div><div class="memdoc">
 
 <p>Creates a new sensor for the Sensor List and adds it to the end of the list. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Order of sensors in list determines order of data in the log file. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">sensorName</td><td>is the name of he sensor. </td></tr>
     <tr><td class="paramname">units</td><td>are the desired units to be used with the sensor. </td></tr>
@@ -268,7 +291,28 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Checks to ensure critical parts are configured correctly. Adds the Date and Time as the first sensor in the data log. </p>
+
+<p>Checks to ensure critical parts are configured correctly. </p>
+<p>Adds the Date and Time as the first sensor in the data log. </p>
+
+</div>
+</div>
+<a class="anchor" id="adf8b2bc50273e7cf789edb73facbdfda"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DataLoggerSD::collectionInterval </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This is a placeholder function that will be replaced with a sleep library. </p>
+<p>Temporary function will be depreciated at a later date. </p>
 
 </div>
 </div>
@@ -302,16 +346,16 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
       </table>
 </div><div class="memdoc">
 
-<p>Gets the raw pin reading and converts it to a voltage reading. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Gets the raw pin reading and converts it to a sensor reading. </p>
+<p>analog will return a voltage, digital returns 1 or 0. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">pinVal</td><td>is a value taken from digitalRead() or analogRead() </td></tr>
     <tr><td class="paramname">vRef</td><td>is the voltage refrence, usually either 3.3 or 5.0 </td></tr>
-    <tr><td class="paramname">analog</td><td>determines the correct value to return </td></tr>
+    <tr><td class="paramname">analog</td><td>determines the correct value to return. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>pin reading. If analog it will return a voltage. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Pin reading, if analog it returns a voltage. </dd></dl>
 
 </div>
 </div>
@@ -340,13 +384,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div><div class="memdoc">
 
 <p>Gets the reading from a sensor that returns a float and sets it to the given node's readings. </p>
-<p>If using a pin for raw data use getRawPinReading() instead. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>If using a pin for raw data use <a class="el" href="class_data_logger_s_d.html#a361857e17707f5b742cfc823bccd0de9" title="Gets the raw pin reading and converts it to a sensor reading. ">getNewRawPinReading()</a> instead. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">sensorName</td><td>is the name of the sensor that gathered the data. </td></tr>
     <tr><td class="paramname">sensorReading</td><td>is the reading taken by the sensor. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_data_logger_s_d.html#a361857e17707f5b742cfc823bccd0de9" title="Gets the raw pin reading and converts it to a sensor reading. ">getNewRawPinReading()</a> </dd></dl>
 
 </div>
 </div>
@@ -365,7 +410,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div><div class="memdoc">
 
 <p>Logs data in a file, the files are designed to be viewed on a system chronologically. </p>
-<p>The file name is the current year + the abbreviated month over which the data was collected. This logs all the data. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>The file name is the current year + the abbreviated month over which the data was collected. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">includeSeconds</td><td>is if the log is to include seconds. </td></tr>
   </table>
@@ -389,13 +434,13 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div><div class="memdoc">
 
 <p>Reads date from RTC and converts the numbers to a character string. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Date format (all numbers): m/d/yyyy </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dateStr</td><td>is the string to hold the date. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>dateStr. Date format (all numbers): m/d/yyyy </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Date as a string. </dd></dl>
 
 </div>
 </div>
@@ -431,7 +476,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>timeStr </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Time as a string. </dd></dl>
 
 </div>
 </div>
@@ -442,7 +487,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 20 2016 13:51:52 for DataLogger API by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Aug 4 2016 19:57:39 for DataLogger API by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>
