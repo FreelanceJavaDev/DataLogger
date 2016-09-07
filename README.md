@@ -19,7 +19,7 @@ I'd appreciate the credit and a plug when used.  I use this library myself as yo
 
 ## Overview 
 This is a library to make a DataLogger.  It requires an RTC and shield with an SD card to work.
-The library configures the SD card and RTC automatically.
+The library configures the SD card and RTC automatically.  There is no GUI even if the Shield has a screen. 
 
 ## Details
 If the SD card cannot be found there will be an error thrown.
