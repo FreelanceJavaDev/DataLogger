@@ -4,7 +4,6 @@
 <param name="FrameName" value="right">
 </OBJECT>
 <UL>
-<LI><OBJECT type="text/sitemap"><param name="Name" value="LICENSE"><param name="Local" value="md__Users_brianyoung_1_Documents_Arduino_libraries_DataLogger_LICENSE.html"><param name="ImageNumber" value="11"></OBJECT>
 <LI><OBJECT type="text/sitemap"><param name="Name" value="README"><param name="Local" value="md__Users_brianyoung_1_Documents_Arduino_libraries_DataLogger_README.html"><param name="ImageNumber" value="11"></OBJECT>
 <LI><OBJECT type="text/sitemap"><param name="Name" value="Classes"><param name="Local" value="annotated.html"><param name="ImageNumber" value="1"></OBJECT>
   <UL>
