@@ -42,20 +42,19 @@ void DataLoggerSDConfig::configLogger()
 	#endif
 	/* SD Card Check END */
 	/* RTC Check START */
-	setSyncProvider(RTC.get);   // the function to get the time from the RTC
-	//setSyncInterval(10);
-	bool is_time_set = (timeStatus() != timeSet);
-	#if is_time_set
-		 check = Serial.available();
-		#if check 
-			time_t t = processSyncMessage();
-			# if (t != 0)
-				RTC.set(t);   // set the RTC and the system time to the received value
-				setTime(t);          
-			#endif
-		#endif
-	#endif
-	/* RTC Check END */
+    check = !RTC.chipPresent();
+    #if check
+        #error Could not read RTC!
+    #endif
+    time_t compile_tm = parseClock();
+    check = (compile_tm > RTC.get()); //only set RTC if compile time is greater than RTC time
+    if(check) 
+    {
+        if(compile_tm != 0) //USB cable connected
+        { RTC.set(compile_tm); }
+    }
+    setSyncProvider(RTC.get); // the function to get the time from the RTC
+        	/* RTC Check END */
 
 }
 /*
@@ -67,18 +66,35 @@ void DataLoggerSDConfig::configLogger()
 
 /**
  * @brief Configures RTC to the system time and date from the connected computer.
- * @details Serial must be available.
+ * @details Compiler __DATE__ and __TIME__ must be available.
  */
- unsigned long DataLoggerSDConfig::processSyncMessage() {
-	const unsigned long DEFAULT_TIME = 1357041600; // Jan 1 2013 
-	unsigned long pc_time = 0L;
-	if(Serial.find((char*)"T")) {
-		 pc_time = Serial.parseInt();
-		 if( pc_time < DEFAULT_TIME) {pc_time = 0L;} // check the value is a valid time (greater than Jan 1 2013)
-	}
-	return pc_time;
-}
+time_t DataLoggerSDConfig::parseClock() {
+    int Hour, Min, Sec;
+    char month[5];
+    int Day, Year;
+    tmElements_t tm;
+    uint8_t monthNum;
+    const char* dateStr = (char*)__DATE__;
+    const char* timeStr = (char*)__TIME__;
+    
+    const char* monthNames = (char *)"JanFebMarAprMayJunJulAugSepOctNovDec";
+    //parse time
+    if (sscanf(timeStr, "%d:%d:%d", &Hour, &Min, &Sec) != 3){return 0;}
+    //parse date
+    if (sscanf(dateStr, "%s %d %d", month, &Day, &Year) != 3){return 0;}
+    monthNum = (strstr(monthNames, month)-monthNames)/3;
+    if (monthNum >= 12){return 0;}
+    tm.Hour = Hour;
+    tm.Minute = Min;
+    tm.Second = Sec;
+    tm.Day = Day;
+    tm.Month = monthNum + 1;
+    tm.Year = CalendarYrToTm(Year);
+    
+    
+    return makeTime(tm);
 
+}
 /*
  * * * * * * * * * * * * * * * * * * *
  * ---------------END--------------- *

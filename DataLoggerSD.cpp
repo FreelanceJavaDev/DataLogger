@@ -4,8 +4,8 @@
  * THIS IS NOT FOR BEGINNERS TO MODIFY!
  * @file DataLoggerSD.cpp
  * @author Brian Young
- * @version 0.9.5 (Beta)
- * @since Current: 8/4/16 \n
+ * @version 0.9.6 (Beta)
+ * @since Current: 9/26/16 \n
  * Created: 6/29/16
  */
 
@@ -73,11 +73,13 @@ void DataLoggerSD::begin()
     DataLoggerSDConfig configCheck(_sdPin);
     configCheck.configLogger();    
     configCheck.~DataLoggerSDConfig();
-    addSensorToList("Date Time", "m/d/yyyy h:mm:ss"); //provides Compatible date and time for spreadsheets
+    addSensorToList("Date", "m/d/yyyy"); //provides Compatible date for spreadsheets
+    addSensorToList("Time", "h:mm:ss"); //provides Compatible time for spreadsheets
+
 }
 
 /**
- * @brief       Logs data in a file, the files are designed to be viewed on a system chronologically.
+ * @brief       Logs data in a CSV file (Excell compatible), the files are designed to be viewed on a system chronologically.
  * @details     The file name is the current year + the abbreviated month over which the data was collected.
  * @param       includeSeconds is if the log is to include seconds.
  */
@@ -110,17 +112,16 @@ void DataLoggerSD::logData(bool includeSeconds)
         char* stamp = (char *)malloc(sizeof(char));
         monthLog.print(readDate(stamp));
         free(stamp);
-        monthLog.print(' ');
+        monthLog.print(DATA_SEPERATOR);
         stamp = (char *)malloc(sizeof(char));
         monthLog.print(readTime(stamp, includeSeconds));
         free(stamp);
         stamp = NULL;
         monthLog.print(DATA_SEPERATOR);
-        
-        for ( SensorInfo *n = (head -> next); n; n = n-> next)
+        for ( SensorInfo *n = ((head -> next)->next); n; n = n-> next) //starts after date and time readings
         {
             monthLog.print(n->_sensorReading);
-            if ((n->next)) //remove trailing comma
+            if ((n->next)) //omitt trailing comma
             { monthLog.print(DATA_SEPERATOR); } 
         }
         
