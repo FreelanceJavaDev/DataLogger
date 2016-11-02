@@ -13,7 +13,6 @@
 #include <SD.h>
 #include <Time.h>
 #include <DS1307RTC.h>
-#include <time.h>
 
 #if defined(ARDUINO) && ARDUINO >= 100
 #include "Arduino.h"
@@ -21,9 +20,6 @@
 #include "WProgram.h"
 #endif
 
-#ifndef __AVR__
-#include <sys/types.h> // for __time_t_defined, but avr libc lacks sys/types.h
-#endif
 
 class DataLoggerSDConfig {
 	public:

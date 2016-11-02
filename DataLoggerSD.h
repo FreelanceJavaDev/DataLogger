@@ -10,11 +10,7 @@
  */
 #ifndef _DataLoggerSD_h_
 #define _DataLoggerSD_h_
-
-#include <SPI.h>
 #include <SD.h>
-#include <Time.h>
-#include <DS1307RTC.h>
 #include "DataLoggerSDConfig.h" /** @see DataLoggerSDConfig.h#*/
 
 #if defined(ARDUINO) && ARDUINO >= 100
