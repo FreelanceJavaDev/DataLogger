@@ -15,8 +15,9 @@
 
 ## Introduction
 I did this on my own as a volunteer, I made no money on this nor do I plan to. 
+
 I'd appreciate the credit and a plug when used.  I use this library myself as you see it here.  Feedback and bug reports are greatly appreciated, but fixes may take time depending on what else I have going on.
-In additon the standrd RTC1307 library (which does DS1302, DS1307 and DS2302 RTCs) and the Time sibrary are required. 
+In additon the standard RTC1307 library (which does DS1302, DS1307 and DS2302 RTCs) and the Time sibrary are required. 
 Both can be obtained through the Sketch -> Include Library -> Manage Libraries menu item.
 
 ## Overview 
