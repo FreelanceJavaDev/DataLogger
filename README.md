@@ -1,4 +1,4 @@
-#Data Logger Library
+# Data Logger Library
 #### Author
 
 * [Brian Young](https://github.com/FreelanceJavaDev)
@@ -6,7 +6,7 @@
 ## Supported Devices
 
 * Uno - Tested
-* Mega - In progress
+* Mega - Tested
 
 ## Supported Shields
 * SD Card Shield - Tested
